@@ -1,0 +1,8 @@
+Libraries to install:
+
+opencv-python
+face-recognition
+numpy
+customtkinter
+Pillow
+python-dotenv
