@@ -4,13 +4,13 @@ A high-performance surveillance solution that integrates **real-time motion dete
 
 
 
-## 📋 System Overview
+## System Overview
 
 The project consists of two core applications:
 * **The Recognition Engine (`main.py`)**: A multi-threaded monitoring system that handles live analysis and data logging.
 * **The Enrollment Portal (`enrollment.py`)**: A modern GUI for onboarding new users and managing biometric data.
 
-## 🏗️ Architectural Decisions
+## Architectural Decisions
 
 ### 1. Multi-Threaded Performance
 To ensure the video feed remains smooth and lag-free, the system separates tasks into independent threads:
@@ -32,7 +32,7 @@ Unlike basic systems that run AI on every single frame, this system utilizes **B
 * **Signature Caching**: Facial encodings are **"pickled"** into a cache file (`face_signatures.pkl`). This allows the system to load known faces instantly on startup without re-processing image files.
 * **Stranger Alerts**: If an unknown face is detected, the system captures a high-resolution snapshot and logs a **"Security Alert"** to the database.
 
-## 🛠️ Technical Stack
+## Technical Stack
 
 * **OpenCV**: Used for video stream manipulation and image processing.
 * **Dlib / Face_Recognition**: Powers the facial feature extraction and distance matching.
@@ -40,7 +40,7 @@ Unlike basic systems that run AI on every single frame, this system utilizes **B
 * **SQLite3**: Provides a lightweight, reliable database for thread-safe security logs.
 * **Python-Dotenv**: Manages sensitive configuration like RTSP URLs and directory paths.
 
-## ⚙️ Setup and Usage
+## Setup and Usage
 
 ### Configuration
 1.  Create a **.env** file in the root folder.
@@ -58,3 +58,5 @@ Run `main.py` to start the security monitor:
 * **Known users** will be outlined in **GREEN**.
 * **Strangers** will be outlined in **RED**, and their photo will be saved to the `captured_strangers` folder.
 * Logs can be reviewed in the **security_log.db** file.
+
+* Any other file needed (database, logs.txt etc) will be made after the first run of the code
